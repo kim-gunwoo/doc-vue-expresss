@@ -28,18 +28,23 @@ app.use(cookieParser());
 app.use(express.static("public"));
 //app.use(express.static(path.join(__dirname, 'public')));
 
+/*
+라우터 설정
+*/
+app.use("/health", require("./routes/health"));
+
 // 404 에러 처리
 app.use((req, res, next) => {
-    //next(createError(404));
-    //next(Error("not found"));
-    res.status(404).json("not found");
+  //next(createError(404));
+  //next(Error("not found"));
+  res.status(404).json("not found");
 });
 
 //  500 에러
 app.use((err, req, res, next) => {
-    console.log(err);
-    res.status(err.status || 500);
-    res.json({ error: err.message || "internal server error" });
+  console.log(err);
+  res.status(err.status || 500);
+  res.json({ error: err.message || "internal server error" });
 });
 
 module.exports = app;

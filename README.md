@@ -24,7 +24,7 @@ npm i axios vue-router vuex (o)
 # express project dependencies
 body-parser (x)) => express.json() , express.urlencoded({ extended: false }))
 npm i express (o)
-express-session
+express-session (o)
 cookie-parser (o)
 connect-flash
 
@@ -32,20 +32,20 @@ connect-flash
 npm i compression (o)
 
 # login passport : passport , auth : jsonwebtoken
-npm i passport passport-local
-jsonwebtoken
+npm i passport passport-local (o)
+jsonwebtoken (o)
 
 # cookie session save store : session-file-store
-npm i session-file-store
+npm i session-file-store (o)
 
 # DB use lowdb , key generate : shortid
-npm i lowdb shortid
+npm i lowdb shortid (o)
 
 # request info : morgan
 npm i morgan (o)
 
 # encryption utility : bcrypt
-npm i bcrypt
+npm i bcrypt (o)
 
 # cross domain : cors
 npm i cors (o)

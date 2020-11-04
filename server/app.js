@@ -29,9 +29,32 @@ app.use(express.static("public"));
 //app.use(express.static(path.join(__dirname, 'public')));
 
 /*
+express 세션 설정
+ */
+const session = require("express-session");
+app.use(
+  session({
+    secret: "keyvalue",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+/**
+ passport 처리 설정
+ */
+const passport = require("passport");
+app.use(passport.initialize());
+app.use(passport.session());
+
+/*
 라우터 설정
 */
 app.use("/health", require("./routes/health"));
+app.use("/auth", require("./routes/auth"));
+app.get("/test", passport.authenticateUser, (req, res) => {
+  res.json({ data: "success" });
+});
 
 // 404 에러 처리
 app.use((req, res, next) => {

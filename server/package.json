@@ -16,9 +16,12 @@
         "express-session": "^1.17.1",
         "jsonwebtoken": "^8.5.1",
         "lowdb": "^1.0.0",
+        "mariadb": "^2.5.1",
         "morgan": "^1.10.0",
+        "mysql2": "^2.2.5",
         "passport": "^0.4.1",
         "passport-local": "^1.0.0",
+        "sequelize": "^6.3.5",
         "session-file-store": "^1.5.0",
         "shortid": "^2.2.16"
     },

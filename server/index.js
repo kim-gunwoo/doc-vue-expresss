@@ -13,5 +13,8 @@ const PORT = process.env.PORT || 3000
 */
 const PORT = 9999;
 
+const sequelize = require("./models/sequelize").sequelize;
+sequelize.sync();
+
 // 서버 기동
 app.listen(PORT, () => console.log(`server is running localhost:${PORT}`));
